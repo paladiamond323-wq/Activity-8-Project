@@ -23,7 +23,17 @@ def main():
     print(f"Clothing Size: {clothing_size}")
 
     print("\nThank you for completing the survey!")
+tk.Label(root, text="Select your clothing size:").pack(pady=5)
 
+size_var = tk.StringVar()
+size_dropdown = ttk.Combobox(
+    root,
+    textvariable=size_var,
+    values=["Small", "Medium", "Large"],
+    state="readonly"
+)
+size_dropdown.pack()
+size_dropdown.current(0)
 
 # Run the app
 if __name__ == "__main__":
